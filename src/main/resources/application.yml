@@ -1,0 +1,39 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+#https://devfunny.tistory.com/406(참조)
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@127.0.0.1:1521:XE
+    username:
+    password:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
+  mvc:
+    view:
+      prefix: /templates/
+      suffix: .thymleaf
+
+  jpa:
+    hibernate:
+      ddl-auto: create #create update none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          google:
+#            client-id: 126984657954-fhc4f35m57ld93if07j72o1951gfcch6.apps.googleusercontent.com
+#            client-secret: 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
+#            scope:
+#              - email
+#              - profile
